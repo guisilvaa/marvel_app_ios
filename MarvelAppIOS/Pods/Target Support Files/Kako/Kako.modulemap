@@ -1,0 +1,6 @@
+framework module Kako {
+  umbrella header "Kako-umbrella.h"
+
+  export *
+  module * { export * }
+}

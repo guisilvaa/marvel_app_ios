@@ -1,0 +1,67 @@
+PODS:
+  - Alamofire (5.4.3)
+  - DynamicBlurView (4.1.0)
+  - IQKeyboardManagerSwift (6.5.6)
+  - Kako (0.0.1):
+    - KeychainAccess
+    - Moya
+    - ObjectMapper
+    - ReachabilitySwift
+  - KeychainAccess (4.2.2)
+  - Kingfisher (6.3.1)
+  - lottie-ios (3.2.3)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - ObjectMapper (4.2.0)
+  - PopupDialog (1.1.1):
+    - DynamicBlurView (~> 4.0)
+  - ReachabilitySwift (5.0.0)
+  - UICircularProgressRing (8.0.0)
+  - UIScrollView-InfiniteScroll (1.1.0)
+
+DEPENDENCIES:
+  - IQKeyboardManagerSwift
+  - Kako
+  - Kingfisher (~> 6.0)
+  - lottie-ios
+  - PopupDialog
+  - UICircularProgressRing
+  - UIScrollView-InfiniteScroll (~> 1.1.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - DynamicBlurView
+    - IQKeyboardManagerSwift
+    - KeychainAccess
+    - Kingfisher
+    - lottie-ios
+    - Moya
+    - ObjectMapper
+    - PopupDialog
+    - ReachabilitySwift
+    - UICircularProgressRing
+    - UIScrollView-InfiniteScroll
+  https://github.com/guisilvaa/AppsPodSpecs.git:
+    - Kako
+
+SPEC CHECKSUMS:
+  Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
+  DynamicBlurView: 58e18fae80bb614e34681a4486870e7d257b62e8
+  IQKeyboardManagerSwift: c7df9d2deb356c04522f5c4b7b6e4ce4d8ed94fe
+  Kako: 80b377ab92d93c5c2a872a36889922298e51169b
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
+  PopupDialog: 720c92befd8bc23c13442254945213db5612f149
+  ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
+  UICircularProgressRing: 19927375b2b21b5fa5fd9582f15ccdef9659da16
+  UIScrollView-InfiniteScroll: 3ef456bcbe759c19f510a383cff96e6647c98c98
+
+PODFILE CHECKSUM: 62981a58e2db8964bc9e68379f7032510e0d83a9
+
+COCOAPODS: 1.10.1
