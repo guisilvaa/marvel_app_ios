@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+import PopupDialog
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,8 +15,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 18.0
+        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "OK"
+        
+        setupPopUpAppearence()
+        
         return true
+    }
+    
+    private func setupPopUpAppearence() {
+        
+        // Customize dialog appearance
+        let pv = PopupDialogDefaultView.appearance()
+        pv.titleFont    = UIFont.boldSystemFont(ofSize: 15)
+        pv.titleColor   = UIColor.black
+        pv.messageFont  = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.light)
+        pv.messageColor = UIColor.black
+        
+        // Customize the container view appearance
+        let pcv = PopupDialogContainerView.appearance()
+        pcv.backgroundColor = UIColor.clear
+        pcv.shadowEnabled   = false
+        pcv.shadowColor     = UIColor.clear
+        
+        // Customize overlay appearance
+        let ov = PopupDialogOverlayView.appearance()
+        ov.blurEnabled     = false
+        ov.opacity         = 0.3
+        ov.color           = UIColor.black
+        
+        // Customize default button appearance
+        let db = DefaultButton.appearance()
+        db.titleFont      = UIFont.boldSystemFont(ofSize: 12)
+        db.titleColor     = .white
+        db.buttonColor    = UIColor.blue
+        db.separatorColor = UIColor.white
+        db.buttonHeight   = 50
     }
 
     // MARK: UISceneSession Lifecycle
