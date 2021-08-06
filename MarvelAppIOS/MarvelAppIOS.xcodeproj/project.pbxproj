@@ -26,7 +26,6 @@
 		CF47E97426BC5D1E009FF754 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E96D26BC5D1E009FF754 /* ShadowView.swift */; };
 		CF47E97626BC5D6F009FF754 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E97526BC5D6F009FF754 /* StringExtension.swift */; };
 		CF47E97826BC5DC7009FF754 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E97726BC5DC7009FF754 /* UIColorExtension.swift */; };
-		CF47E97B26BC5E5F009FF754 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E97A26BC5E5F009FF754 /* NavigationManager.swift */; };
 		CF47E97F26BC5EFB009FF754 /* EmptyViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF47E97D26BC5EFB009FF754 /* EmptyViewCell.xib */; };
 		CF47E98026BC5EFB009FF754 /* EmptyViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E97E26BC5EFB009FF754 /* EmptyViewCell.swift */; };
 		CF47E98226BC5F4A009FF754 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = CF47E98126BC5F4A009FF754 /* Localizable.strings */; };
@@ -34,6 +33,10 @@
 		CF47E98926BC69D3009FF754 /* CharacterApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E98826BC69D3009FF754 /* CharacterApi.swift */; };
 		CF47E98C26BC6C43009FF754 /* MarvelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E98B26BC6C43009FF754 /* MarvelApi.swift */; };
 		CF47E99026BC7998009FF754 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E98F26BC7998009FF754 /* CharacterService.swift */; };
+		CFFCF54C26BDAD5900BD07E7 /* Character.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFCF54B26BDAD5900BD07E7 /* Character.storyboard */; };
+		CFFCF54F26BDAE6800BD07E7 /* CharacterItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFCF54E26BDAE6800BD07E7 /* CharacterItemCell.xib */; };
+		CFFCF55126BDAE8100BD07E7 /* CharacterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCF55026BDAE8100BD07E7 /* CharacterItemCell.swift */; };
+		CFFCF55426BDB3B600BD07E7 /* CharactersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCF55326BDB3B600BD07E7 /* CharactersViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +87,6 @@
 		CF47E96D26BC5D1E009FF754 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
 		CF47E97526BC5D6F009FF754 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		CF47E97726BC5DC7009FF754 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		CF47E97A26BC5E5F009FF754 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		CF47E97D26BC5EFB009FF754 /* EmptyViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyViewCell.xib; sourceTree = "<group>"; };
 		CF47E97E26BC5EFB009FF754 /* EmptyViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyViewCell.swift; sourceTree = "<group>"; };
 		CF47E98126BC5F4A009FF754 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -92,6 +94,10 @@
 		CF47E98826BC69D3009FF754 /* CharacterApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterApi.swift; sourceTree = "<group>"; };
 		CF47E98B26BC6C43009FF754 /* MarvelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelApi.swift; sourceTree = "<group>"; };
 		CF47E98F26BC7998009FF754 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
+		CFFCF54B26BDAD5900BD07E7 /* Character.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Character.storyboard; sourceTree = "<group>"; };
+		CFFCF54E26BDAE6800BD07E7 /* CharacterItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterItemCell.xib; sourceTree = "<group>"; };
+		CFFCF55026BDAE8100BD07E7 /* CharacterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCell.swift; sourceTree = "<group>"; };
+		CFFCF55326BDB3B600BD07E7 /* CharactersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewController.swift; sourceTree = "<group>"; };
 		FD7DEDBD726FED7CBAB9E3E7 /* Pods-MarvelAppIOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MarvelAppIOS.debug.xcconfig"; path = "Target Support Files/Pods-MarvelAppIOS/Pods-MarvelAppIOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -236,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				CF47E98A26BC6BE4009FF754 /* Service */,
-				CF47E97926BC5E4D009FF754 /* Manager */,
 				CF47E96926BC5D1E009FF754 /* View */,
 			);
 			path = Global;
@@ -261,14 +266,6 @@
 			path = LoadingView;
 			sourceTree = "<group>";
 		};
-		CF47E97926BC5E4D009FF754 /* Manager */ = {
-			isa = PBXGroup;
-			children = (
-				CF47E97A26BC5E5F009FF754 /* NavigationManager.swift */,
-			);
-			path = Manager;
-			sourceTree = "<group>";
-		};
 		CF47E97C26BC5EFB009FF754 /* EmptyViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +278,8 @@
 		CF47E98326BC6617009FF754 /* Character */ = {
 			isa = PBXGroup;
 			children = (
+				CFFCF55226BDB39300BD07E7 /* Controller */,
+				CFFCF54A26BDAD3900BD07E7 /* View */,
 				CF47E98526BC6647009FF754 /* Service */,
 				CF47E98426BC6640009FF754 /* Model */,
 			);
@@ -310,6 +309,32 @@
 				CF47E98B26BC6C43009FF754 /* MarvelApi.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		CFFCF54A26BDAD3900BD07E7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCF54D26BDAE5300BD07E7 /* CharacterItemCell */,
+				CFFCF54B26BDAD5900BD07E7 /* Character.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CFFCF54D26BDAE5300BD07E7 /* CharacterItemCell */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCF54E26BDAE6800BD07E7 /* CharacterItemCell.xib */,
+				CFFCF55026BDAE8100BD07E7 /* CharacterItemCell.swift */,
+			);
+			path = CharacterItemCell;
+			sourceTree = "<group>";
+		};
+		CFFCF55226BDB39300BD07E7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CFFCF55326BDB3B600BD07E7 /* CharactersViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,11 +445,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFFCF54C26BDAD5900BD07E7 /* Character.storyboard in Resources */,
 				CF47E93E26BC5430009FF754 /* LaunchScreen.storyboard in Resources */,
 				CF47E96E26BC5D1E009FF754 /* Assets.xcassets in Resources */,
 				CF47E97F26BC5EFB009FF754 /* EmptyViewCell.xib in Resources */,
 				CF47E98226BC5F4A009FF754 /* Localizable.strings in Resources */,
 				CF47E96F26BC5D1E009FF754 /* loading.json in Resources */,
+				CFFCF54F26BDAE6800BD07E7 /* CharacterItemCell.xib in Resources */,
 				CF47E93926BC542E009FF754 /* Main.storyboard in Resources */,
 				CF47E97226BC5D1E009FF754 /* LoadingView.xib in Resources */,
 			);
@@ -557,6 +584,7 @@
 				CF47E99026BC7998009FF754 /* CharacterService.swift in Sources */,
 				CF47E93626BC542E009FF754 /* ViewController.swift in Sources */,
 				CF47E93226BC542E009FF754 /* AppDelegate.swift in Sources */,
+				CFFCF55426BDB3B600BD07E7 /* CharactersViewController.swift in Sources */,
 				CF47E97126BC5D1E009FF754 /* UIViewControllerExtension.swift in Sources */,
 				CF47E98726BC6671009FF754 /* Character.swift in Sources */,
 				CF47E97026BC5D1E009FF754 /* UIImageViewExtension.swift in Sources */,
@@ -567,7 +595,7 @@
 				CF47E93426BC542E009FF754 /* SceneDelegate.swift in Sources */,
 				CF47E97326BC5D1E009FF754 /* LoadingView.swift in Sources */,
 				CF47E97426BC5D1E009FF754 /* ShadowView.swift in Sources */,
-				CF47E97B26BC5E5F009FF754 /* NavigationManager.swift in Sources */,
+				CFFCF55126BDAE8100BD07E7 /* CharacterItemCell.swift in Sources */,
 				CF47E98026BC5EFB009FF754 /* EmptyViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
