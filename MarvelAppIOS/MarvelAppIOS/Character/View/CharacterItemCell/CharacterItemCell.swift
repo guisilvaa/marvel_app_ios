@@ -29,18 +29,14 @@ class CharacterItemCell: UITableViewCell {
     
     static let IDENTIFIER = "CharacterItemCell"
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
     func fillCell(character: Character, isFavorite: Bool)  {
         self.character = character
         
-        avatarImageView.loadImage(url: character.thumbImage?.imagePath ?? "")
+        self.avatarImageView.loadImage(url: character.thumbImage?.imagePath ?? "")
         
         self.nameLabel.text = character.name
         self.descriptionLabel.text = character.description
-        self.favoriteButton.setImage(isFavorite ? UIImage(named: "star.fill") : UIImage(named: "star"), for: .normal)
+        self.favoriteButton.setImage(isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star"), for: .normal)
     }
 
     @IBAction func onFavoriteClicked(_ sender: UIButton) {

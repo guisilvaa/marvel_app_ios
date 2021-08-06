@@ -21,13 +21,12 @@ class MarvelApi {
     var domainUrl: String
     private var privatekey: String
     private var apikey: String
-    private var ts: String { Date().timeIntervalSince1970.description }
     
-    var hash: String  { "\(ts)\(privatekey)\(apikey)".md5 }
     var authParams: [String: String] {
-        ["apikey": apikey,
-         "ts": ts,
-         "hash": hash]
+        let timeStamp = "\(Date().timeIntervalSince1970)"
+        return ["apikey": apikey,
+                "ts": timeStamp,
+                "hash": "\(timeStamp)\(privatekey)\(apikey)".md5]
     }
     
     init() {

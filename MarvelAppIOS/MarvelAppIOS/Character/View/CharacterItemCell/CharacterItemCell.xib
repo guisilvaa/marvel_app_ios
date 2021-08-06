@@ -21,6 +21,11 @@
                             <constraint firstAttribute="width" constant="48" id="Iea-85-B0q"/>
                             <constraint firstAttribute="height" constant="48" id="UY9-Dz-WLL"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="24"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nJO-d6-aZd">
                         <rect key="frame" x="364" y="29" width="30" height="30"/>

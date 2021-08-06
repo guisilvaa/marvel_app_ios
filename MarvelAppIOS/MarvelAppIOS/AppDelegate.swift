@@ -8,6 +8,7 @@
 import UIKit
 import IQKeyboardManagerSwift
 import PopupDialog
+import Kako
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "OK"
         
         setupPopUpAppearence()
+        
+        KakoManager.shared.setup(dataSource: KakoHandler())
         
         return true
     }

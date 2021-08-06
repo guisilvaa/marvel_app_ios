@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func showLoading(_ show: Bool)
+    func showLoading(show: Bool)
     {
         let window = UIApplication.shared.delegate?.window
         if show {

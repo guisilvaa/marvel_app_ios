@@ -38,7 +38,7 @@ extension CharacterApi: TargetType {
             var params = MarvelApi.shared.authParams
             params.updateValue("\(page)", forKey: "offset")
             
-            if let query = query {
+            if let query = query, !query.isEmpty {
                 params.updateValue(query, forKey: "nameStartsWith")
             }
             
@@ -54,7 +54,7 @@ extension CharacterApi: TargetType {
     }
     
     var task: Task {
-        return Task.requestParameters(parameters: self.parameters ?? [:], encoding: URLEncoding.default)
+        return Task.requestParameters(parameters: self.parameters ?? [:], encoding: URLEncoding.queryString)
     }
     
     var sampleData: Data {

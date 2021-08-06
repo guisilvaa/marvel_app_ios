@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import Kako
 
 class CharactersViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var searchBar: UISearchBar!
+    
+    private var viewModel = CharactersViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,9 +26,24 @@ class CharactersViewController: UIViewController {
         self.tableView.estimatedRowHeight = 70.0
         
         self.searchBar.placeholder = "CHARACTER_SEARCH_PLACEHOLDER".localized()
+        self.searchBar.delegate = self
+        
+        self.viewModel.delegate = self
+        self.viewModel.loadCharacters()
+        
+        setupInfiniteScroll()
     }
     
-
+    private func setupInfiniteScroll() {
+        self.tableView.addInfiniteScroll { (_) in
+            self.viewModel.loadCharacters()
+        }
+        
+        self.tableView.setShouldShowInfiniteScrollHandler { (_) -> Bool in
+            return self.viewModel.hasMoreCharacters
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -38,10 +56,39 @@ class CharactersViewController: UIViewController {
 
 }
 
+extension CharactersViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText.isEmpty {
+            self.viewModel.loadCharacters(query: "")
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let query = searchBar.text
+        self.viewModel.loadCharacters(query: query)
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.viewModel.loadCharacters(query: "")
+    }
+}
+
+extension CharactersViewController: CharactersViewModelDelegate {
+    func onCharactersLoaded() {
+        self.tableView.finishInfiniteScroll()
+        self.tableView.reloadData()
+    }
+    
+    func onCharactersError(error: KakoError?) {
+        
+    }
+}
+
 extension CharactersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5//self.notifications.isEmpty ? 1 : self.notifications.count
+        return self.viewModel.characters.count //5//self.notifications.isEmpty ? 1 : self.notifications.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -59,7 +106,8 @@ extension CharactersViewController: UITableViewDataSource {
         }*/
         
         let itemCell = tableView.dequeueReusableCell(withIdentifier: CharacterItemCell.IDENTIFIER, for: indexPath) as! CharacterItemCell
-        //itemCell.fillCell(notification: notifications[indexPath.row])
+        let character = self.viewModel.characters[indexPath.row]
+        itemCell.fillCell(character: character, isFavorite: false)
         cell = itemCell
         
         return cell!
