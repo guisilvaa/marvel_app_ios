@@ -16,6 +16,8 @@ class CharactersViewController: UIViewController {
     
     private var viewModel = CharactersViewModel()
     
+    private let CHARACTER_DETAILS_SEGUE = "CHARACTER_DETAILS_SEGUE"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,15 +46,15 @@ class CharactersViewController: UIViewController {
         }
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == CHARACTER_DETAILS_SEGUE {
+            let viewController = segue.destination as! CharacterDetailsViewController
+            viewController.character = (sender as! Character)
+        }
     }
-    */
 
 }
 
@@ -125,6 +127,9 @@ extension CharactersViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if !self.viewModel.characters.isEmpty {
+            let character = self.viewModel.characters[indexPath.row]
+            self.performSegue(withIdentifier: CHARACTER_DETAILS_SEGUE, sender: character)
+        }
     }
 }

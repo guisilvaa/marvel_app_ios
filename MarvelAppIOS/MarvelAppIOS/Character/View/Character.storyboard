@@ -41,15 +41,55 @@
                             <constraint firstItem="VpG-6Z-MXB" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wVP-oS-0LJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Characters" id="Ke8-pk-ahp"/>
+                    <navigationItem key="navigationItem" title="Characters" id="Ke8-pk-ahp">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Of7-uH-YwC"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="c5j-67-P3T" id="fLj-jc-qLt"/>
                         <outlet property="tableView" destination="VpG-6Z-MXB" id="6GJ-vd-NxI"/>
+                        <segue destination="p1r-1I-H3N" kind="show" identifier="CHARACTER_DETAILS_SEGUE" id="1VH-KH-1DX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1944.9275362318842" y="88.392857142857139"/>
+        </scene>
+        <!--Bio-->
+        <scene sceneID="uFO-xX-ewe">
+            <objects>
+                <viewController id="p1r-1I-H3N" customClass="CharacterDetailsViewController" customModule="MarvelAppIOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zsa-7H-iRy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="DYz-zo-vSx">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="p1r-1I-H3N" id="X8m-Ae-Ihz"/>
+                                    <outlet property="delegate" destination="p1r-1I-H3N" id="HQI-H6-ccU"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="lc5-Pe-ogt"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DYz-zo-vSx" firstAttribute="leading" secondItem="lc5-Pe-ogt" secondAttribute="leading" id="Gew-l5-bLJ"/>
+                            <constraint firstItem="DYz-zo-vSx" firstAttribute="trailing" secondItem="lc5-Pe-ogt" secondAttribute="trailing" id="M6r-Zv-tzG"/>
+                            <constraint firstItem="DYz-zo-vSx" firstAttribute="bottom" secondItem="lc5-Pe-ogt" secondAttribute="bottom" id="P7v-CJ-Y3w"/>
+                            <constraint firstItem="DYz-zo-vSx" firstAttribute="top" secondItem="lc5-Pe-ogt" secondAttribute="top" id="d2V-S9-GRX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bio" id="UXv-mb-ZMQ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="zUb-uv-gdv"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="DYz-zo-vSx" id="AOW-48-QvA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2a3-uI-bOs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2692.753623188406" y="87.723214285714278"/>
         </scene>
         <!--Item-->
         <scene sceneID="WyB-D9-yox">

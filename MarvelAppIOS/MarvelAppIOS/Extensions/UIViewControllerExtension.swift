@@ -11,21 +11,24 @@ extension UIViewController {
     
     func showLoading(show: Bool)
     {
-        let window = UIApplication.shared.delegate?.window
-        if show {
-            if let _ = window??.viewWithTag(LoadingView.TAG)
-            {
-                return
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate,
+           let window = sceneDelegate.window {
+            if show {
+                if let _ = window.viewWithTag(LoadingView.TAG)
+                {
+                    return
+                }
+                
+                let loading = LoadingView.loadFromNib(frame: UIScreen.main.bounds)
+                loading.tag = LoadingView.TAG
+                window.addSubview(loading)
             }
-            
-            let loading = LoadingView.loadFromNib(frame: UIScreen.main.bounds)
-            loading.tag = LoadingView.TAG
-            window??.addSubview(loading)
-        }
-        else {
-            window??.viewWithTag(LoadingView.TAG)?.removeFromSuperview()
+            else {
+                window.viewWithTag(LoadingView.TAG)?.removeFromSuperview()
+            }
         }
     }
+    
     /*
     public func showErrorMessage(title: String? = nil, error: GameficError?, completionHandler: (() -> Void)? = nil) {
         

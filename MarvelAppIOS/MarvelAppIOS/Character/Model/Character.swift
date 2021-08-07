@@ -46,6 +46,10 @@ class Character: Mappable {
     var name: String?
     var description: String?
     var thumbImage: ThumbImage?
+    var comics: CharacterAppearence?
+    var stories: CharacterAppearence?
+    var events: CharacterAppearence?
+    var series: CharacterAppearence?
     
     required init(map: Map) {
     }
@@ -55,6 +59,10 @@ class Character: Mappable {
         name <- map["name"]
         description <- map["description"]
         thumbImage <- map["thumbnail"]
+        comics <- map["comics"]
+        stories <- map["stories"]
+        events <- map["events"]
+        series <- map["series"]
     }
 }
 
@@ -71,5 +79,19 @@ class ThumbImage: Mappable {
     func mapping(map: Map) {
         path <- map["path"]
         imageExtension <- map["extension"]
+    }
+}
+
+class CharacterAppearence: Mappable {
+    
+    var available: Int = 0
+    var returned: Int = 0
+    
+    required init(map: Map) {
+    }
+    
+    func mapping(map: Map) {
+        available <- map["available"]
+        returned <- map["returned"]
     }
 }

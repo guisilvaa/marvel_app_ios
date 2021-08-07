@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CharacterDetailCell" rowHeight="289" id="RGO-zw-21Y" customClass="CharacterDetailCell" customModule="MarvelAppIOS" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="289"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RGO-zw-21Y" id="OPN-NN-rnV">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="289"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MPW-T5-n9f">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="200" id="fgB-Ov-y8i"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pd5-EU-CoN">
+                        <rect key="frame" x="20" y="220" width="374" height="22"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <color key="textColor" red="0.30980392159999998" green="0.30588235289999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Am-IQ-7Rn">
+                        <rect key="frame" x="20" y="252" width="374" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.30980392159999998" green="0.30588235289999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="Pd5-EU-CoN" secondAttribute="trailing" constant="20" id="9Y0-s2-SCL"/>
+                    <constraint firstAttribute="bottom" secondItem="0Am-IQ-7Rn" secondAttribute="bottom" constant="20" id="C9O-vU-UCt"/>
+                    <constraint firstItem="Pd5-EU-CoN" firstAttribute="top" secondItem="MPW-T5-n9f" secondAttribute="bottom" constant="20" id="Ewa-PI-qLT"/>
+                    <constraint firstItem="0Am-IQ-7Rn" firstAttribute="top" secondItem="Pd5-EU-CoN" secondAttribute="bottom" constant="10" id="Kkz-6s-GYM"/>
+                    <constraint firstItem="0Am-IQ-7Rn" firstAttribute="leading" secondItem="Pd5-EU-CoN" secondAttribute="leading" id="KmI-VP-0VR"/>
+                    <constraint firstAttribute="trailing" secondItem="MPW-T5-n9f" secondAttribute="trailing" id="XBv-KJ-3qY"/>
+                    <constraint firstItem="MPW-T5-n9f" firstAttribute="top" secondItem="OPN-NN-rnV" secondAttribute="top" id="aSu-iQ-WbH"/>
+                    <constraint firstItem="Pd5-EU-CoN" firstAttribute="leading" secondItem="OPN-NN-rnV" secondAttribute="leading" constant="20" id="bSO-A0-ijk"/>
+                    <constraint firstItem="0Am-IQ-7Rn" firstAttribute="trailing" secondItem="Pd5-EU-CoN" secondAttribute="trailing" id="bc2-XS-7Kp"/>
+                    <constraint firstItem="MPW-T5-n9f" firstAttribute="leading" secondItem="OPN-NN-rnV" secondAttribute="leading" id="xQ9-QK-m7M"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="avatarImageView" destination="MPW-T5-n9f" id="ktU-Ex-wlP"/>
+                <outlet property="descriptionLabel" destination="0Am-IQ-7Rn" id="iNA-rl-oeI"/>
+                <outlet property="nameLabel" destination="Pd5-EU-CoN" id="Snq-rM-hTt"/>
+            </connections>
+            <point key="canvasLocation" x="179.71014492753625" y="33.816964285714285"/>
+        </tableViewCell>
+    </objects>
+</document>
