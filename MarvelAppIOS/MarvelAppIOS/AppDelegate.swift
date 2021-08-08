@@ -34,12 +34,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let pv = PopupDialogDefaultView.appearance()
         pv.titleFont    = UIFont.boldSystemFont(ofSize: 15)
         pv.titleColor   = UIColor.black
-        pv.messageFont  = UIFont.systemFont(ofSize: 14, weight: UIFont.Weight.light)
+        pv.messageFont  = UIFont.systemFont(ofSize: 14)
         pv.messageColor = UIColor.black
         
         // Customize the container view appearance
         let pcv = PopupDialogContainerView.appearance()
-        pcv.backgroundColor = UIColor.clear
+        pcv.backgroundColor = UIColor.white
         pcv.shadowEnabled   = false
         pcv.shadowColor     = UIColor.clear
         
@@ -52,9 +52,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Customize default button appearance
         let db = DefaultButton.appearance()
         db.titleFont      = UIFont.boldSystemFont(ofSize: 12)
-        db.titleColor     = .white
-        db.buttonColor    = UIColor.blue
-        db.separatorColor = UIColor.white
+        db.titleColor     = UIColor.black
+        db.buttonColor    = UIColor.clear
+        db.separatorColor = UIColor.veryLightPink
         db.buttonHeight   = 50
     }
 

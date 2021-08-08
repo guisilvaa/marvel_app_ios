@@ -19,11 +19,14 @@ protocol CharactersViewModelDelegate {
 class CharactersViewModel {
     
     var characters: [Character] = []
+    var error: KakoError?
     
     private var currentPage = 0
     private var totalResults = 0
     
     var hasMoreCharacters: Bool { self.characters.count < totalResults }
+    
+    var hasError: Bool { self.error != nil }
     
     var delegate: CharactersViewModelDelegate!
     
@@ -54,12 +57,14 @@ class CharactersViewModel {
                 else {
                     self.characters = items
                 }
+                self.error = nil
                 self.delegate.onCharactersLoaded()
                 
                 self.currentPage += 1
                 
             case .failure(let error):
                 self.characters = []
+                self.error = error
                 self.delegate.onCharactersError(error: error)
             }
         }

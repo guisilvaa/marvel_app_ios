@@ -83,34 +83,40 @@ extension CharactersViewController: CharactersViewModelDelegate {
     }
     
     func onCharactersError(error: KakoError?) {
-        
+        showErrorMessage(error: error)
+        self.tableView.finishInfiniteScroll()
+        self.tableView.reloadData()
     }
 }
 
 extension CharactersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.characters.count //5//self.notifications.isEmpty ? 1 : self.notifications.count
+        return self.viewModel.characters.isEmpty ? 1 : self.viewModel.characters.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell?
         
-        /*if notifications.isEmpty {
+        if self.viewModel.characters.isEmpty {
             let itemCell = tableView.dequeueReusableCell(withIdentifier: EmptyViewCell.IDENTIFIER, for: indexPath) as! EmptyViewCell
-            itemCell.fillCell(color: UIColor.turquoiseGreen, icon: UIImage(named: "icFlagEmptyView")!, message: "TIMELINE_EMPTY_MESSAGE".localized())
+            if self.viewModel.hasError {
+                itemCell.fillCell(error: self.viewModel.error)
+                itemCell.buttonAction = {
+                    self.viewModel.loadCharacters(query: self.searchBar.text)
+                }
+            }
+            else {
+                itemCell.fillCell(color: UIColor.turquoiseGreen, icon: UIImage(systemName: "star")!, message: "CHARACTERS_EMPTY_MESSAGE".localized())
+            }
             cell = itemCell
         }
         else {
-            let itemCell = tableView.dequeueReusableCell(withIdentifier: NotificationItemCell.IDENTIFIER, for: indexPath) as! NotificationItemCell
-            itemCell.fillCell(notification: notifications[indexPath.row])
+            let itemCell = tableView.dequeueReusableCell(withIdentifier: CharacterItemCell.IDENTIFIER, for: indexPath) as! CharacterItemCell
+            let character = self.viewModel.characters[indexPath.row]
+            itemCell.fillCell(character: character, isFavorite: false)
             cell = itemCell
-        }*/
-        
-        let itemCell = tableView.dequeueReusableCell(withIdentifier: CharacterItemCell.IDENTIFIER, for: indexPath) as! CharacterItemCell
-        let character = self.viewModel.characters[indexPath.row]
-        itemCell.fillCell(character: character, isFavorite: false)
-        cell = itemCell
+        }
         
         return cell!
     }
