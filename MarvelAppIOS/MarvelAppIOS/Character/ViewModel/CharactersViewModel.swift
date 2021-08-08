@@ -69,4 +69,12 @@ class CharactersViewModel {
             }
         }
     }
+    
+    func saveFavorite(character: Character) {
+        CharacterManager.shared.saveFavorite(character: character)
+    }
+    
+    func isFavorite(character: Character) -> Bool {
+        return CharacterManager.shared.isFavorite(character: character)
+    }
 }

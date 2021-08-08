@@ -34,6 +34,8 @@ class CharactersViewController: UIViewController {
         self.viewModel.loadCharacters()
         
         setupInfiniteScroll()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(favoriteCharacterChanged(_:)), name: .favoriteCharacter, object: nil)
     }
     
     private func setupInfiniteScroll() {
@@ -43,6 +45,13 @@ class CharactersViewController: UIViewController {
         
         self.tableView.setShouldShowInfiniteScrollHandler { (_) -> Bool in
             return self.viewModel.hasMoreCharacters
+        }
+    }
+    
+    @objc func favoriteCharacterChanged(_ notification: Notification) {
+        if let character = notification.object as? Character,
+           let _ = self.viewModel.characters.firstIndex(where: { $0.id == character.id }) {
+            self.tableView.reloadData()
         }
     }
     
@@ -89,6 +98,12 @@ extension CharactersViewController: CharactersViewModelDelegate {
     }
 }
 
+extension CharactersViewController: CharacterItemCellDelegate {
+    func onFavoriteCharacter(character: Character) {
+        self.viewModel.saveFavorite(character: character)
+    }
+}
+
 extension CharactersViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -114,7 +129,8 @@ extension CharactersViewController: UITableViewDataSource {
         else {
             let itemCell = tableView.dequeueReusableCell(withIdentifier: CharacterItemCell.IDENTIFIER, for: indexPath) as! CharacterItemCell
             let character = self.viewModel.characters[indexPath.row]
-            itemCell.fillCell(character: character, isFavorite: false)
+            itemCell.fillCell(character: character, isFavorite: self.viewModel.isFavorite(character: character))
+            itemCell.delegate = self
             cell = itemCell
         }
         

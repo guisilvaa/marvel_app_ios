@@ -40,7 +40,7 @@ class CharacterItemCell: UITableViewCell {
     }
 
     @IBAction func onFavoriteClicked(_ sender: UIButton) {
-        delegate?.onFavoriteCharacter(character: self.character)
+        self.delegate?.onFavoriteCharacter(character: self.character)
     }
     
 }

@@ -11,7 +11,11 @@ class CharacterDetailsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var favoriteBarButton: UIBarButtonItem!
+    
     var character: Character!
+    
+    private var viewModel: CharacterDetailViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,25 @@ class CharacterDetailsViewController: UIViewController {
 
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 200.0
+        
+        self.viewModel = CharacterDetailViewModel(character: self.character)
+        setupFavoriteButton()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(favoriteCharacterChanged(_:)), name: .favoriteCharacter, object: nil)
+    }
+    
+    private func setupFavoriteButton() {
+        let icon = self.viewModel.isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star")
+        let favoriteButton = UIBarButtonItem(image: icon, style: .plain, target: self, action: #selector(onFavoriteClicked))
+        self.navigationItem.rightBarButtonItem  = favoriteButton
+    }
+    
+    @objc func favoriteCharacterChanged(_ notification: Notification) {
+        setupFavoriteButton()
+    }
+    
+    @objc func onFavoriteClicked(){
+        self.viewModel.saveFavorite()
     }
 }
 

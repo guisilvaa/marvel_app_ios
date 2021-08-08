@@ -19,3 +19,4 @@
 "CHARACTER_DETAILS_EVENTS_COUNT" = "%d events";
 "CHARACTER_DETAILS_SERIES_COUNT" = "%d series";
 "CHARACTERS_EMPTY_MESSAGE" = "No character found.";
+"CHARACTER_FAVORITES_EMPTY_MESSAGE" = "No favorite character found.";
