@@ -8,19 +8,13 @@
 import Foundation
 import Kako
 
-class CharacterService {
+protocol CharacterServiceProtocol {
+    func characters(page: Int, query: String?, completionHandler: @escaping (Result<CharacterDataWrapper, KakoError>) -> Void)
+}
+
+class CharacterService: CharacterServiceProtocol {
     
     private let provider: KakoProvider<CharacterApi>
-    
-    private static var _shared: CharacterService?
-    public static var shared: CharacterService {
-        get {
-            if _shared == nil {
-                _shared = CharacterService()
-            }
-            return _shared!
-        }
-    }
     
     init() {
         provider = KakoProvider<CharacterApi>()

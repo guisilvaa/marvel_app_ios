@@ -21,14 +21,20 @@ class CharactersViewModel {
     var characters: [Character] = []
     var error: KakoError?
     
-    private var currentPage = 0
-    private var totalResults = 0
-    
     var hasMoreCharacters: Bool { self.characters.count < totalResults }
     
     var hasError: Bool { self.error != nil }
     
-    var delegate: CharactersViewModelDelegate!
+    var delegate: CharactersViewModelDelegate?
+    
+    private var currentPage = 0
+    private var totalResults = 0
+    
+    private var charactersService: CharacterServiceProtocol
+    
+    init(charactersService: CharacterServiceProtocol = CharacterService()) {
+        self.charactersService = charactersService
+    }
     
     func loadCharacters(query: String? = nil, isRefreshing: Bool = false) {
         if isRefreshing || query != nil {
@@ -36,12 +42,12 @@ class CharactersViewModel {
         }
         
         if !isRefreshing && self.currentPage == 0 {
-            self.delegate.showLoading(show: true)
+            self.delegate?.showLoading(show: true)
         }
         
-        CharacterService.shared.characters(page: self.currentPage * 20, query: query) { result in
+        self.charactersService.characters(page: self.currentPage * 20, query: query) { result in
             
-            self.delegate.showLoading(show: false)
+            self.delegate?.showLoading(show: false)
             
             switch result {
             case .success(let characters):
@@ -58,14 +64,14 @@ class CharactersViewModel {
                     self.characters = items
                 }
                 self.error = nil
-                self.delegate.onCharactersLoaded()
+                self.delegate?.onCharactersLoaded()
                 
                 self.currentPage += 1
                 
             case .failure(let error):
                 self.characters = []
                 self.error = error
-                self.delegate.onCharactersError(error: error)
+                self.delegate?.onCharactersError(error: error)
             }
         }
     }

@@ -15,7 +15,6 @@
 		CF47E93626BC542E009FF754 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E93526BC542E009FF754 /* ViewController.swift */; };
 		CF47E93926BC542E009FF754 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF47E93726BC542E009FF754 /* Main.storyboard */; };
 		CF47E93E26BC5430009FF754 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF47E93C26BC5430009FF754 /* LaunchScreen.storyboard */; };
-		CF47E94926BC5430009FF754 /* MarvelAppIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E94826BC5430009FF754 /* MarvelAppIOSTests.swift */; };
 		CF47E95426BC5430009FF754 /* MarvelAppIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF47E95326BC5430009FF754 /* MarvelAppIOSUITests.swift */; };
 		CF47E96E26BC5D1E009FF754 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF47E96226BC5D1E009FF754 /* Assets.xcassets */; };
 		CF47E96F26BC5D1E009FF754 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = CF47E96426BC5D1E009FF754 /* loading.json */; };
@@ -37,6 +36,8 @@
 		CF54F13026C05A0800944E7C /* CharacterFavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54F12F26C05A0800944E7C /* CharacterFavoritesViewModel.swift */; };
 		CF54F13326C05C8900944E7C /* CharacterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54F13226C05C8900944E7C /* CharacterManager.swift */; };
 		CF54F13626C08F9D00944E7C /* CharacterDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF54F13526C08F9D00944E7C /* CharacterDetailsViewModel.swift */; };
+		CF9D36B926C172EB005EE005 /* CharactersViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D36B826C172EB005EE005 /* CharactersViewModelTests.swift */; };
+		CF9D36BB26C17436005EE005 /* MockCharactersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF9D36BA26C17436005EE005 /* MockCharactersService.swift */; };
 		CFFCF54C26BDAD5900BD07E7 /* Character.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CFFCF54B26BDAD5900BD07E7 /* Character.storyboard */; };
 		CFFCF54F26BDAE6800BD07E7 /* CharacterItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFFCF54E26BDAE6800BD07E7 /* CharacterItemCell.xib */; };
 		CFFCF55126BDAE8100BD07E7 /* CharacterItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFFCF55026BDAE8100BD07E7 /* CharacterItemCell.swift */; };
@@ -84,7 +85,6 @@
 		CF47E93D26BC5430009FF754 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF47E93F26BC5430009FF754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF47E94426BC5430009FF754 /* MarvelAppIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF47E94826BC5430009FF754 /* MarvelAppIOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppIOSTests.swift; sourceTree = "<group>"; };
 		CF47E94A26BC5430009FF754 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF47E94F26BC5430009FF754 /* MarvelAppIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MarvelAppIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF47E95326BC5430009FF754 /* MarvelAppIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAppIOSUITests.swift; sourceTree = "<group>"; };
@@ -109,6 +109,8 @@
 		CF54F12F26C05A0800944E7C /* CharacterFavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterFavoritesViewModel.swift; sourceTree = "<group>"; };
 		CF54F13226C05C8900944E7C /* CharacterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterManager.swift; sourceTree = "<group>"; };
 		CF54F13526C08F9D00944E7C /* CharacterDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailsViewModel.swift; sourceTree = "<group>"; };
+		CF9D36B826C172EB005EE005 /* CharactersViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersViewModelTests.swift; sourceTree = "<group>"; };
+		CF9D36BA26C17436005EE005 /* MockCharactersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCharactersService.swift; sourceTree = "<group>"; };
 		CFFCF54B26BDAD5900BD07E7 /* Character.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Character.storyboard; sourceTree = "<group>"; };
 		CFFCF54E26BDAE6800BD07E7 /* CharacterItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterItemCell.xib; sourceTree = "<group>"; };
 		CFFCF55026BDAE8100BD07E7 /* CharacterItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterItemCell.swift; sourceTree = "<group>"; };
@@ -218,8 +220,9 @@
 		CF47E94726BC5430009FF754 /* MarvelAppIOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				CF47E94826BC5430009FF754 /* MarvelAppIOSTests.swift */,
 				CF47E94A26BC5430009FF754 /* Info.plist */,
+				CF9D36B826C172EB005EE005 /* CharactersViewModelTests.swift */,
+				CF9D36BA26C17436005EE005 /* MockCharactersService.swift */,
 			);
 			path = MarvelAppIOSTests;
 			sourceTree = "<group>";
@@ -714,7 +717,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF47E94926BC5430009FF754 /* MarvelAppIOSTests.swift in Sources */,
+				CF9D36B926C172EB005EE005 /* CharactersViewModelTests.swift in Sources */,
+				CF9D36BB26C17436005EE005 /* MockCharactersService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -926,6 +930,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5C433PVJQP;
 				INFOPLIST_FILE = MarvelAppIOSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -948,6 +953,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5C433PVJQP;
 				INFOPLIST_FILE = MarvelAppIOSTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -969,6 +975,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5C433PVJQP;
 				INFOPLIST_FILE = MarvelAppIOSUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -989,6 +996,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5C433PVJQP;
 				INFOPLIST_FILE = MarvelAppIOSUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -12,6 +12,8 @@ class CharacterDataWrapper: Mappable {
     
     var data: CharacterDataContainer?
     
+    init() {}
+    
     required init(map: Map) {
     }
     
@@ -27,6 +29,8 @@ class CharacterDataContainer: Mappable {
     var total: Int?
     var count: Int?
     var results: [Character]?
+    
+    init() {}
     
     required init(map: Map) {
     }
@@ -51,6 +55,8 @@ class Character: Mappable {
     var events: CharacterAppearence?
     var series: CharacterAppearence?
     
+    init() {}
+    
     required init(map: Map) {
     }
     
@@ -73,6 +79,8 @@ class ThumbImage: Mappable {
     
     var imagePath: String { "\(path).\(imageExtension)" }
     
+    init() {}
+    
     required init(map: Map) {
     }
     
@@ -86,6 +94,8 @@ class CharacterAppearence: Mappable {
     
     var available: Int = 0
     var returned: Int = 0
+    
+    init() {}
     
     required init(map: Map) {
     }
