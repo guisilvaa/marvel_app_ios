@@ -36,13 +36,11 @@ class CharactersViewModel {
         self.charactersService = charactersService
     }
     
-    func loadCharacters(query: String? = nil, isRefreshing: Bool = false) {
-        if isRefreshing || query != nil {
-            self.currentPage = 0
-        }
+    func loadCharacters(query: String? = nil, showLoading: Bool = true, resetList: Bool = false) {
+        self.delegate?.showLoading(show: showLoading)
         
-        if !isRefreshing && self.currentPage == 0 {
-            self.delegate?.showLoading(show: true)
+        if resetList {
+            self.currentPage = 0
         }
         
         self.charactersService.characters(page: self.currentPage * 20, query: query) { result in

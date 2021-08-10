@@ -41,7 +41,7 @@ class CharactersViewController: UIViewController {
     
     private func setupInfiniteScroll() {
         self.tableView.addInfiniteScroll { (_) in
-            self.viewModel.loadCharacters()
+            self.viewModel.loadCharacters(query: self.searchBar.text, showLoading: false)
         }
         
         self.tableView.setShouldShowInfiniteScrollHandler { (_) -> Bool in
@@ -72,7 +72,7 @@ extension CharactersViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
-            self.viewModel.loadCharacters(query: "")
+            self.viewModel.loadCharacters(resetList: true)
             
             DispatchQueue.main.async { [weak self] in
                         guard let self = self else{ return }
@@ -83,7 +83,7 @@ extension CharactersViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let query = searchBar.text
-        self.viewModel.loadCharacters(query: query)
+        self.viewModel.loadCharacters(query: query, resetList: true)
         searchBar.resignFirstResponder()
     }
 }
