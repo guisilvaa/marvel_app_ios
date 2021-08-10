@@ -37,6 +37,7 @@ class CharacterItemCell: UITableViewCell {
         self.nameLabel.text = character.name
         self.descriptionLabel.text = character.description
         self.favoriteButton.setImage(isFavorite ? UIImage(systemName: "star.fill") : UIImage(systemName: "star"), for: .normal)
+        self.favoriteButton.tintColor = UIColor.primaryColor
     }
 
     @IBAction func onFavoriteClicked(_ sender: UIButton) {

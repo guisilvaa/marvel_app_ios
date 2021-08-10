@@ -18,14 +18,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         IQKeyboardManager.shared.enable = true
-        IQKeyboardManager.shared.keyboardDistanceFromTextField = 18.0
-        IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "OK"
         
+        customizeNavBarAppearence()
         setupPopUpAppearence()
         
         KakoManager.shared.setup(dataSource: KakoHandler())
         
         return true
+    }
+    
+    func customizeNavBarAppearence()
+    {
+        let navigationAttrs = [
+            NSAttributedString.Key.foregroundColor : UIColor.greyishBrown,
+            NSAttributedString.Key.font : UIFont.systemFont(ofSize: 18.0)
+        ]
+        
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = navigationAttrs
+        UINavigationBar.appearance().tintColor = UIColor.primaryColor
+        UINavigationBar.appearance().isTranslucent = false
     }
     
     private func setupPopUpAppearence() {
@@ -54,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         db.titleFont      = UIFont.boldSystemFont(ofSize: 12)
         db.titleColor     = UIColor.black
         db.buttonColor    = UIColor.clear
-        db.separatorColor = UIColor.veryLightPink
+        db.separatorColor = UIColor.lightGrey
         db.buttonHeight   = 50
     }
 

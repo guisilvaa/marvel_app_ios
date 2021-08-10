@@ -37,27 +37,11 @@ extension UIColor {
         self.init(red: r, green: g, blue: b, alpha: alpha)
     }
     
-    @nonobjc class var blue: UIColor {
-        return UIColor(red: 0.0, green: 67.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
+    @nonobjc class var primaryColor: UIColor {
+        return UIColor(red:0.910, green: 0.282, blue: 0.333, alpha: 1.000)
     }
     
-    @nonobjc class var turquoiseGreen: UIColor {
-        return UIColor(red: 0.0, green: 1.0, blue: 141.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var bluePurple: UIColor {
-        return UIColor(red: 82.0 / 255.0, green: 10.0 / 255.0, blue: 237.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var pumpkinOrange: UIColor {
-        return UIColor(red: 1.0, green: 116.0 / 255.0, blue: 0.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var marigold: UIColor {
-        return UIColor(red: 1.0, green: 197.0 / 255.0, blue: 0.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var veryLightPink: UIColor {
+    @nonobjc class var lightGrey: UIColor {
         return UIColor(white: 204.0 / 255.0, alpha: 1.0)
     }
     
@@ -65,63 +49,4 @@ extension UIColor {
         return UIColor(white: 80.0 / 255.0, alpha: 1.0)
     }
     
-    @nonobjc class var cherryRed: UIColor {
-        return UIColor(red: 1.0, green: 0.0, blue: 40.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var red: UIColor {
-        return UIColor(red: 1.0, green: 0.0, blue: 0.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var brownGrey: UIColor {
-        return UIColor(white: 151.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var whitee: UIColor {
-        return UIColor(white: 246.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var veryLightPinkFour: UIColor {
-        return UIColor(white: 196.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var trueBlue: UIColor {
-        return UIColor(red: 0.0, green: 52.0 / 255.0, blue: 182.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var pinkRed: UIColor {
-        return UIColor(red: 225.0 / 255.0, green: 36.0 / 255.0, blue: 80.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var dullOrange: UIColor {
-        return UIColor(red: 226.0 / 255.0, green: 123.0 / 255.0, blue: 49.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var purpleBlue: UIColor {
-        return UIColor(red: 73.0 / 255.0, green: 38.0 / 255.0, blue: 231.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var sunflowerYellow: UIColor {
-        return UIColor(red: 1.0, green: 230.0 / 255.0, blue: 0.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var veryLightPinkFive: UIColor {
-        return UIColor(white: 242.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var bluePurpleTwo: UIColor {
-      return UIColor(red: 80.0 / 255.0, green: 13.0 / 255.0, blue: 238.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var uglyYellow: UIColor {
-      return UIColor(red: 204.0 / 255.0, green: 209.0 / 255.0, blue: 0.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var marineBlue: UIColor {
-       return UIColor(red: 0.0, green: 32.0 / 255.0, blue: 115.0 / 255.0, alpha: 1.0)
-     }
-    
-    @nonobjc class var brightYellow: UIColor {
-      return UIColor(red: 1.0, green: 1.0, blue: 0.0, alpha: 1.0)
-    }
 }

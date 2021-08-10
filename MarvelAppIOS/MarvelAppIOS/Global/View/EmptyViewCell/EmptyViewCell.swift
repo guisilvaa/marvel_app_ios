@@ -29,20 +29,20 @@ class EmptyViewCell: UITableViewCell {
     }
     
     func fillCell(color: UIColor, icon: UIImage, message: String) {
+        self.emptyImageView.tintColor = UIColor.greyishBrown
         self.emptyImageView.image = icon
         self.emptyMessageLabel.text = message
         self.button.isHidden = true
     }
     
     func fillCell(error: KakoError?) {
+        self.emptyImageView.tintColor = UIColor.primaryColor
         if error?.code == KakoErrorType.connection.rawValue {
-            self.emptyImageView.image = UIImage(systemName: "person")
-            self.emptyImageView.tintColor = UIColor.marigold
+            self.emptyImageView.image = UIImage(systemName: "wifi.exclamationmark")
             self.emptyMessageLabel.text = "ERROR_CONECTION_MESSAGE".localized()
         }
         else {
-            self.emptyImageView.image = UIImage(systemName: "person")
-            self.emptyImageView.tintColor = UIColor.cherryRed
+            self.emptyImageView.image = UIImage(systemName: "exclamationmark.triangle")
             self.emptyMessageLabel.text = "ERROR_GENERIC_MESSAGE".localized()
         }
         self.button.isHidden = false

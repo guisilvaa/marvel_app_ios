@@ -27,6 +27,7 @@ class CharactersViewController: UIViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 70.0
         
+        self.searchBar.searchTextField.backgroundColor = .lightGrey
         self.searchBar.placeholder = "CHARACTER_SEARCH_PLACEHOLDER".localized()
         self.searchBar.delegate = self
         
@@ -72,16 +73,18 @@ extension CharactersViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if searchText.isEmpty {
             self.viewModel.loadCharacters(query: "")
+            
+            DispatchQueue.main.async { [weak self] in
+                        guard let self = self else{ return }
+                        self.searchBar.resignFirstResponder()
+                    }
         }
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let query = searchBar.text
         self.viewModel.loadCharacters(query: query)
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.viewModel.loadCharacters(query: "")
+        searchBar.resignFirstResponder()
     }
 }
 
@@ -122,7 +125,7 @@ extension CharactersViewController: UITableViewDataSource {
                 }
             }
             else {
-                itemCell.fillCell(color: UIColor.turquoiseGreen, icon: UIImage(systemName: "star")!, message: "CHARACTERS_EMPTY_MESSAGE".localized())
+                itemCell.fillCell(color: UIColor.greyishBrown, icon: UIImage(systemName: "person.circle")!, message: "CHARACTERS_EMPTY_MESSAGE".localized())
             }
             cell = itemCell
         }

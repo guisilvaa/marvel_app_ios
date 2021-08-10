@@ -69,7 +69,7 @@ extension CharacterFavoritesViewController: UITableViewDataSource {
         
         if self.viewModel.favorites.isEmpty {
             let itemCell = tableView.dequeueReusableCell(withIdentifier: EmptyViewCell.IDENTIFIER, for: indexPath) as! EmptyViewCell
-            itemCell.fillCell(color: UIColor.turquoiseGreen, icon: UIImage(systemName: "star")!, message: "CHARACTER_FAVORITES_EMPTY_MESSAGE".localized())
+            itemCell.fillCell(color: UIColor.greyishBrown, icon: UIImage(systemName: "star")!, message: "CHARACTER_FAVORITES_EMPTY_MESSAGE".localized())
             cell = itemCell
         }
         else {

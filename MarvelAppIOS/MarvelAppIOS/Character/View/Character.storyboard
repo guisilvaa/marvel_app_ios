@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,13 +23,16 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="34F-J4-POC"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="c5j-67-P3T">
+                            <searchBar contentMode="redraw" backgroundImage="person" translatesAutoresizingMaskIntoConstraints="NO" id="c5j-67-P3T">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.30980392159999998" green="0.30588235289999999" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="c5j-67-P3T" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="F7I-SG-zmw"/>
                             <constraint firstItem="c5j-67-P3T" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Gwb-BG-UP7"/>
@@ -79,7 +81,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lc5-Pe-ogt"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DYz-zo-vSx" firstAttribute="leading" secondItem="lc5-Pe-ogt" secondAttribute="leading" id="Gew-l5-bLJ"/>
                             <constraint firstItem="DYz-zo-vSx" firstAttribute="trailing" secondItem="lc5-Pe-ogt" secondAttribute="trailing" id="M6r-Zv-tzG"/>
@@ -116,7 +118,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3bM-Jm-Y83"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gDJ-4n-vGQ" firstAttribute="trailing" secondItem="3bM-Jm-Y83" secondAttribute="trailing" id="DrY-8N-z8N"/>
                             <constraint firstItem="gDJ-4n-vGQ" firstAttribute="top" secondItem="3bM-Jm-Y83" secondAttribute="top" id="EtW-0a-8kk"/>
@@ -157,12 +159,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Rzo-pr-p6u"/>
+        <segue reference="1VH-KH-1DX"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="person" width="128" height="128"/>
         <image name="star" catalog="system" width="128" height="116"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
