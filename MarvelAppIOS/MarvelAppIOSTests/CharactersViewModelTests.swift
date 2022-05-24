@@ -8,60 +8,78 @@
 import XCTest
 @testable import MarvelAppIOS
 @testable import Kako
+@testable import Moya
 
 class CharactersViewModelTests: XCTestCase {
 
     var viewModel: CharactersViewModel!
-    var mockCharacterService: MockCharactersService!
+    var provider: KakoProvider<CharacterApi>!
+    var service: CharacterService!
+    
+    var expectationCharactersLoading: XCTestExpectation!
+    var expectationCharactersLoaded: XCTestExpectation!
+    var expectationError: XCTestExpectation!
     
     override func setUp() {
         super.setUp()
         
-        self.mockCharacterService = MockCharactersService()
-        self.viewModel = .init(charactersService: mockCharacterService)
+        self.provider = KakoProvider<CharacterApi>(stubClosure: MoyaProvider.immediatelyStub)
+        self.service = CharacterService(provider: provider)
+        self.viewModel = CharactersViewModel(charactersService: service)
+        self.viewModel.delegate = self
+        
+        expectationCharactersLoading = XCTestExpectation()
+        expectationCharactersLoaded = XCTestExpectation()
+        expectationError = XCTestExpectation()
     }
     
     override func tearDown() {
+        provider = nil
+        service = nil
         viewModel = nil
-        mockCharacterService = nil
+        expectationCharactersLoading = nil
+        expectationCharactersLoaded = nil
+        expectationError = nil
         
         super.tearDown()
     }
     
     func testCharactersLoadedSuccess() {
-        let dataWrapper = CharacterDataWrapper()
-        let dataContainer = CharacterDataContainer()
-        dataContainer.results = [Character(), Character()]
-        dataWrapper.data = dataContainer
-        
-        mockCharacterService.charactersResult = .success(dataWrapper)
-        
         self.viewModel.loadCharacters()
-        
+        wait(for: [expectationCharactersLoading, expectationCharactersLoaded], timeout: 1)
         XCTAssertFalse(viewModel.characters.isEmpty)
         XCTAssertNil(viewModel.error)
     }
     
-    func testCharactersLoadedSuccessWithEmptyCharacters() {
-        let dataWrapper = CharacterDataWrapper()
-        let dataContainer = CharacterDataContainer()
-        dataContainer.results = []
-        dataWrapper.data = dataContainer
-        
-        mockCharacterService.charactersResult = .success(dataWrapper)
-        
-        self.viewModel.loadCharacters()
-        
+    func testCharactersLoadedSuccessWithEmptyResult() {
+        self.viewModel.loadCharacters(query: "empty")
+        wait(for: [expectationCharactersLoading, expectationCharactersLoaded], timeout: 1)
         XCTAssertTrue(viewModel.characters.isEmpty)
         XCTAssertNil(viewModel.error)
     }
     
     func testCharactersLoadedWithError() {
-        mockCharacterService.charactersResult = .failure(KakoError(code: "", description: "", userMessage: ""))
+        
         
         self.viewModel.loadCharacters()
         
         XCTAssertTrue(viewModel.characters.isEmpty)
         XCTAssertNotNil(viewModel.error)
+    }
+}
+
+extension CharactersViewModelTests: CharactersViewModelDelegate {
+    func showLoading(show: Bool) {
+        if show {
+            expectationCharactersLoading.fulfill()
+        }
+    }
+    
+    func onCharactersLoaded() {
+        expectationCharactersLoaded.fulfill()
+    }
+    
+    func onCharactersError(error: KakoError?) {
+        expectationError.fulfill()
     }
 }

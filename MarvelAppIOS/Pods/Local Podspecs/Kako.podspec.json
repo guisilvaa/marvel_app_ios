@@ -1,0 +1,37 @@
+{
+  "name": "Kako",
+  "version": "0.0.1",
+  "summary": "Kako is a network layer.",
+  "description": "Kako is a network layer to handle service calls using Moya.",
+  "homepage": "https://github.com/guisilvaa/Kako",
+  "license": "MIT",
+  "authors": {
+    "Guilherme Silva": "gui.shevs@gmail.com"
+  },
+  "platforms": {
+    "ios": "11.0"
+  },
+  "swift_versions": "5.2",
+  "requires_arc": true,
+  "source": {
+    "git": "https://github.com/guisilvaa/Kako.git",
+    "tag": "0.0.1"
+  },
+  "source_files": "Kako/**/*.{swift}",
+  "exclude_files": "Classes/Exclude",
+  "dependencies": {
+    "Moya": [
+
+    ],
+    "KeychainAccess": [
+
+    ],
+    "ObjectMapper": [
+
+    ],
+    "ReachabilitySwift": [
+
+    ]
+  },
+  "swift_version": "5.2"
+}

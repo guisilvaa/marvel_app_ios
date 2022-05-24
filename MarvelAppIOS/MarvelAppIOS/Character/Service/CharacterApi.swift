@@ -58,6 +58,22 @@ extension CharacterApi: TargetType {
     }
     
     var sampleData: Data {
-        return Data()
+        switch self {
+        case .characters(page: _, filter: let filter):
+            if let _ = filter {
+                if let path = Bundle.main.url(forResource: "characters_empty", withExtension: "json") {
+                    return try! Data(contentsOf: path)
+                }
+            }
+            else {
+                if let path = Bundle.main.url(forResource: "characters", withExtension: "json") {
+                    return try! Data(contentsOf: path)
+                }
+            }
+            
+            return Data()
+        default:
+            return Data()
+        }
     }
 }

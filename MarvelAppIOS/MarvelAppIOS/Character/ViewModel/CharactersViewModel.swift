@@ -30,9 +30,9 @@ class CharactersViewModel {
     private var currentPage = 0
     private var totalResults = 0
     
-    private var charactersService: CharacterServiceProtocol
+    private var charactersService: CharacterService
     
-    init(charactersService: CharacterServiceProtocol = CharacterService()) {
+    init(charactersService: CharacterService = CharacterService()) {
         self.charactersService = charactersService
     }
     

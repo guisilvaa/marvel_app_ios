@@ -7,6 +7,7 @@
 
 import Foundation
 import Kako
+import Moya
 
 protocol CharacterServiceProtocol {
     func characters(page: Int, query: String?, completionHandler: @escaping (Result<CharacterDataWrapper, KakoError>) -> Void)
@@ -14,10 +15,10 @@ protocol CharacterServiceProtocol {
 
 class CharacterService: CharacterServiceProtocol {
     
-    private let provider: KakoProvider<CharacterApi>
+    private var provider: KakoProvider<CharacterApi>
     
-    init() {
-        provider = KakoProvider<CharacterApi>()
+    init(provider: KakoProvider<CharacterApi> = KakoProvider<CharacterApi>(stubClosure: MoyaProvider.neverStub)) {
+        self.provider = provider
     }
     
     func characters(page: Int, query: String? = nil, completionHandler: @escaping (Result<CharacterDataWrapper, KakoError>) -> Void) {
